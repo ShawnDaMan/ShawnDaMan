@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Services Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 Fleet Services Tool</h1>
+            <p>Manage your fleet vehicles efficiently</p>
+        </header>
+
+        <main>
+            <section class="add-vehicle">
+                <h2>Add New Vehicle</h2>
+                <form id="vehicleForm">
+                    <div class="form-group">
+                        <label for="vehicleId">Vehicle ID</label>
+                        <input type="text" id="vehicleId" required placeholder="e.g., VH-001">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleName">Vehicle Name</label>
+                        <input type="text" id="vehicleName" required placeholder="e.g., Delivery Van 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleType">Vehicle Type</label>
+                        <select id="vehicleType" required>
+                            <option value="">Select Type</option>
+                            <option value="car">Car</option>
+                            <option value="van">Van</option>
+                            <option value="truck">Truck</option>
+                            <option value="motorcycle">Motorcycle</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="licensePlate">License Plate</label>
+                        <input type="text" id="licensePlate" required placeholder="e.g., ABC-1234">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" required>
+                            <option value="available">Available</option>
+                            <option value="in-use">In Use</option>
+                            <option value="maintenance">Maintenance</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Vehicle</button>
+                </form>
+            </section>
+
+            <section class="fleet-list">
+                <h2>Fleet Inventory</h2>
+                <div class="filters">
+                    <label for="filterStatus">Filter by Status:</label>
+                    <select id="filterStatus">
+                        <option value="all">All</option>
+                        <option value="available">Available</option>
+                        <option value="in-use">In Use</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="totalVehicles">0</span>
+                        <span class="stat-label">Total Vehicles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="availableCount">0</span>
+                        <span class="stat-label">Available</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="inUseCount">0</span>
+                        <span class="stat-label">In Use</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="maintenanceCount">0</span>
+                        <span class="stat-label">Maintenance</span>
+                    </div>
+                </div>
+                <table id="fleetTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>License Plate</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fleetTableBody">
+                    </tbody>
+                </table>
+                <p id="emptyMessage" class="empty-message">No vehicles in fleet. Add a vehicle to get started!</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Fleet Services Tool. Built for efficient fleet management.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
